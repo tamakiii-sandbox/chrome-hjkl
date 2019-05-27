@@ -17,15 +17,15 @@ window.addEventListener('keyup', (event) => {
 });
 
 window.addEventListener('keydown', (event) => {
-  if (event.preventDefault) {
-    event.preventDefault();
-  }
+  // if (event.preventDefault) {
+  //   event.preventDefault();
+  // }
 
-  let amount = 100;
+  // let amount = 100;
 
-  if (++count > 1) {
-    amount = amount / 2;
-  }
+  // if (++count > 1) {
+  //   amount = amount / 2;
+  // }
 
   if (x === undefined) {
     x = window.pageXOffset
@@ -43,6 +43,7 @@ window.addEventListener('keydown', (event) => {
       switch (event.keyCode) {
         case 72: // h
           // window.scrollBy(10, 0);
+          event.preventDefault();
           window.pageXOffset <= x && window.scroll({
             left: x = (x + amount),
             // left: window.pageXOffset - amount,
@@ -52,6 +53,7 @@ window.addEventListener('keydown', (event) => {
           break;
         case 74: // j
           // window.scrollBy(0, 10);
+          event.preventDefault();
           window.pageYOffset >= y && window.scroll({
             top: y = (y + amount),
             // top: window.pageYOffset + amount,
@@ -61,6 +63,7 @@ window.addEventListener('keydown', (event) => {
           break;
         case 75: // k
           // window.scrollBy(0, -10);
+          event.preventDefault();
           window.pageYOffset <= y && window.scroll({
             top: y = (y - amount),
             // top: window.pageYOffset - amount,
@@ -70,6 +73,7 @@ window.addEventListener('keydown', (event) => {
           break;
         case 76: // l
           // window.scrollBy(-10, 0);
+          event.preventDefault();
           window.pageXOffset >= x && window.scroll({
             left: x = (x + amount),
             // left: window.pageXOffset + amount,
@@ -78,7 +82,6 @@ window.addEventListener('keydown', (event) => {
           });
           break;
         default:
-          // window.console.log('?');
           break;
       }
     }
